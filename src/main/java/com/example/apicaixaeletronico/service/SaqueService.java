@@ -21,12 +21,14 @@ import java.util.logging.Logger;
  */
 
 @Service
-public class SaqueService {
+public class SaqueService<Conta> {
 
     private static final Logger logger = Logger.getLogger(SaqueService.class.getName());
 
     @Autowired
     private CaixaEletronicoRepository repository;
+    private String titular;
+    private BigDecimal saldo;
 
     public List<CedulaDTO> sacar(BigDecimal valor, Cliente clienteByCPF, CaixaEletronico caixaEletronico) {
 
@@ -36,7 +38,6 @@ public class SaqueService {
         return processSelecaoCedulas(valor, clienteByCPF, caixaEletronico);
     }
 
-    //    @TODO - ATUALIZAR SALDO DO CLIENTE
     private List<CedulaDTO> processSelecaoCedulas(BigDecimal valorOriginal, Cliente clienteByCPF, CaixaEletronico detalhesCaixaEletronico) {
 
         logger.info("Processo de Seleção de Células. Cedulas disponiveis: " + detalhesCaixaEletronico.getCedulas());
@@ -63,7 +64,6 @@ public class SaqueService {
         return cedulasRecidas;
     }
 
-    //    @TODO - IMPLEMENTAR VERIFICACAO SALDO CLIENTE
     public boolean existsSaldoSuficienteEmCaixa(CaixaEletronico caixaEletronico, Cliente clienteByCPF, BigDecimal valorSaque) {
 
         int total = caixaEletronico.getTotal().intValue();
@@ -86,4 +86,21 @@ public class SaqueService {
         throw new SaqueException("Valor de Saque Inválido.");
     }
 
+    public void depositar(BigDecimal valorParaDepositar) {
+        BigDecimal valorEmConta = valorParaDepositar;
+    }
+
+    public void verificaSaldo(){
+        System.out.println("Valor do Saldo: "+getSaldo());
+    }
+
+    private String getSaldo() {
+        String CaixaEletronico = null;
+        return CaixaEletronico;
+    }
+
 }
+
+
+
+

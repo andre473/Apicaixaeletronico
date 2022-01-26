@@ -22,6 +22,7 @@ public class CaixaEletronicoService {
 
     private static final Logger logger = Logger.getLogger(CaixaEletronicoService.class.getName());
 
+
     @Autowired
     private SaqueService saqueService;
 
@@ -81,7 +82,7 @@ public class CaixaEletronicoService {
 
         Cliente clienteByCPF = clienteService.getClienteByCPF(dto.getCliente().getCpf());
 
-        return "ok";
+        return null;
     }
 
     public String sacar(SaqueDTO dto) {
