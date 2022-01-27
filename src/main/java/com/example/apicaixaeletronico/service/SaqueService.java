@@ -86,19 +86,9 @@ public class SaqueService<Conta> {
         throw new SaqueException("Valor de Saque Inválido.");
     }
 
-    public void depositar(BigDecimal valorParaDepositar) {
-        BigDecimal valorEmConta = valorParaDepositar;
-    }
 
-    public void verificaSaldo(){
-        System.out.println("Valor do Saldo: "+getSaldo());
-    }
+   }
 
-    private String getSaldo() {
-        String CaixaEletronico = null;
-        return CaixaEletronico;
-    }
-}
 
 
 
