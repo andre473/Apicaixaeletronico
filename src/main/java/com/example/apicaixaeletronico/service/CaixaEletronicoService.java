@@ -66,11 +66,12 @@ public class CaixaEletronicoService {
 
         CaixaEletronico caixaEletronico = new CaixaEletronico();
 
-        caixaEletronico.setCedulas(new ArrayList<Cedula>());
-        caixaEletronico.getCedulas().add(cedulaService.save(new Cedula(10, 5)));
-        caixaEletronico.getCedulas().add(cedulaService.save(new Cedula(20, 5)));
-        caixaEletronico.getCedulas().add(cedulaService.save(new Cedula(50, 5)));
-        caixaEletronico.getCedulas().add(cedulaService.save(new Cedula(100, 5)));
+        ArrayList<Cedula> cedulas = new ArrayList<>();
+        cedulas.add(cedulaService.save(new Cedula(10, 5)));
+        cedulas.add(cedulaService.save(new Cedula(20, 5)));
+        cedulas.add(cedulaService.save(new Cedula(50, 5)));
+        cedulas.add(cedulaService.save(new Cedula(100, 5)));
+        caixaEletronico.setCedulas(cedulas);
 
         caixaEletronico.calculaTotal();
 
