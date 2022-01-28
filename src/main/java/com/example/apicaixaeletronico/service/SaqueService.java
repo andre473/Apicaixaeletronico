@@ -36,7 +36,6 @@ public class SaqueService {
         return processSelecaoCedulas(valor, clienteByCPF, caixaEletronico);
     }
 
-    //    @TODO - ATUALIZAR SALDO DO CLIENTE
     private List<CedulaDTO> processSelecaoCedulas(BigDecimal valorOriginal, Cliente clienteByCPF, CaixaEletronico detalhesCaixaEletronico) {
 
         logger.info("Processo de Seleção de Células. Cedulas disponiveis: " + detalhesCaixaEletronico.getCedulas());
@@ -63,7 +62,7 @@ public class SaqueService {
         return cedulasRecidas;
     }
 
-    //    @TODO - IMPLEMENTAR VERIFICACAO SALDO CLIENTE
+
     public boolean existsSaldoSuficienteEmCaixa(CaixaEletronico caixaEletronico, Cliente clienteByCPF, BigDecimal valorSaque) {
 
         int total = caixaEletronico.getTotal().intValue();
