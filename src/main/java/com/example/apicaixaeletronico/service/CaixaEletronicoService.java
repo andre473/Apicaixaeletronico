@@ -22,7 +22,6 @@ public class CaixaEletronicoService {
 
     private static final Logger logger = Logger.getLogger(CaixaEletronicoService.class.getName());
 
-
     @Autowired
     private SaqueService saqueService;
 
@@ -82,7 +81,7 @@ public class CaixaEletronicoService {
 
         Cliente clienteByCPF = clienteService.getClienteByCPF(dto.getCliente().getCpf());
 
-        return null;
+        return "ok";
     }
 
     public String sacar(SaqueDTO dto) {
@@ -93,5 +92,4 @@ public class CaixaEletronicoService {
         return new Gson().toJson(saque);
     }
 }
-
 

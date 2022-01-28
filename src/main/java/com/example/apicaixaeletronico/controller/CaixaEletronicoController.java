@@ -28,7 +28,7 @@ public class CaixaEletronicoController {
     }
 
     @PutMapping("/deposito")
-    public String deposito (@RequestBody DepositoDTO dto){
+    public String deposito(@RequestBody DepositoDTO dto){
         return service.depositar(dto);
     }
 }
