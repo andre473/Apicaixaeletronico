@@ -28,7 +28,7 @@ public class CaixaEletronico {
     @Column
     private BigDecimal total;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private List<Cedula> cedulas;
 
     public List<Cedula> getCedulas() {
