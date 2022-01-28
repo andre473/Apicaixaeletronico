@@ -5,13 +5,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
-
 @Getter
 @Setter
 @ToString
 @Entity
 @Table
 @AllArgsConstructor
+
 public class Cedula {
     @Id
     @Column(name = "id", nullable = false)
