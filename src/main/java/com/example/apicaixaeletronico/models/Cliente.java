@@ -16,6 +16,7 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Table(name = "cliente")
+
 public class Cliente {
 
     @Id
